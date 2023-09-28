@@ -44,11 +44,6 @@ void Dog::makeSound() const
 	std::cout << "A dog is barking" << std::endl;
 }
 
-const std::string& Dog::getType()
-{
-	return this->type;
-}
-
 // cat.cpp
 
 Cat::Cat()
@@ -79,9 +74,4 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
 	std::cout << "A cat is Meowing" << std::endl;
-}
-
-const std::string& Cat::getType()
-{
-	return this->type;
 }

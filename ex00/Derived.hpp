@@ -11,8 +11,6 @@ class Dog: public Animal
 		Dog& operator=(const Dog& obj);
 		virtual ~Dog();
 		void makeSound() const;
-		const std::string& getType();
-
 };
 
 class Cat: public Animal
@@ -23,9 +21,6 @@ class Cat: public Animal
 		Cat& operator=(const Cat& obj);
 		virtual ~Cat();
 		void makeSound() const;
-		const std::string& getType();
-
-
 };
 
 #endif

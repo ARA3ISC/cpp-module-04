@@ -2,7 +2,7 @@ NAME= polymprphism
 CXX= c++
 RM= rm -rf
 CXXFLAGS= -Werror -Wextra -Wall -Wshadow -std=c++98
-SRC= main.cpp Animal.cpp Derived.cpp
+SRC= main.cpp Animal.cpp Derived.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:23:04 by maneddam          #+#    #+#             */
-/*   Updated: 2023/09/25 18:10:55 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/09/28 15:01:09 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Animal::~Animal()
 	std::cout << "Animal destructor was called" << std::endl;
 }
 
- void Animal::makeSound() const
+void Animal::makeSound() const
 {
 	std::cout << "Animal not precised" << std::endl;
 }
