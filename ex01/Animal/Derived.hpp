@@ -2,9 +2,12 @@
 # define DERIVED_HPP
 
 # include "Animal.hpp"
+# include "../Brain/Brain.hpp"
 
 class Dog: public Animal
 {
+	private:
+		Brain* brain;
 	public:
 		Dog();
 		Dog(const Dog& obj);
@@ -15,6 +18,8 @@ class Dog: public Animal
 
 class Cat: public Animal
 {
+	private:
+		Brain* brain;
 	public:
 		Cat();
 		Cat(const Cat& obj);

@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:15:54 by maneddam          #+#    #+#             */
-/*   Updated: 2023/09/28 15:45:44 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:38:41 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,26 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+	Animal *arr[6];
 
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	for (size_t i = 0; i < 3; i++)
+	{
+		arr[i] = new Dog();
+	}
 
-	delete i;
-	delete j;
-	delete meta;
+	arr[0] = new Dog();
 
 
-	// Wrong animal test
+	for (size_t i = 3; i < 6; i++)
+	{
+		arr[i] = new Cat();
+	}
 
-	// const WrongAnimal* i = new WrongCat();
+	// delete animal objects
 
-	// std::cout << i->getType() << " " << std::endl;
-	// i->makeSound();
-	// delete i;
-
+	for (size_t i = 0; i < 6; i++)
+	{
+		delete arr[i];
+	}
 
 }
