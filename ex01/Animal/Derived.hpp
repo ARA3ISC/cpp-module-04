@@ -7,7 +7,7 @@
 class Dog: public Animal
 {
 	private:
-		Brain* brain;
+		Brain* _brain;
 	public:
 		Dog();
 		Dog(const Dog& obj);
@@ -19,13 +19,18 @@ class Dog: public Animal
 class Cat: public Animal
 {
 	private:
-		Brain* brain;
+		Brain* _brain;
 	public:
 		Cat();
 		Cat(const Cat& obj);
 		Cat& operator=(const Cat& obj);
 		virtual ~Cat();
 		void makeSound() const;
+
+		// void printIdea()
+		// {
+		// 	std::cout << this->brain->ideas[0] << std::endl;
+		// }
 };
 
 #endif

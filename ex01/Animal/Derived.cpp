@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:41:40 by maneddam          #+#    #+#             */
-/*   Updated: 2023/09/28 16:21:33 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/09/29 18:05:57 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@
 
 Dog::Dog()
 {
-	this->type = "Dog";
-
-	this->brain = new Brain();
-
+	this->_type = "Dog";
+	this->_brain = new Brain();
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& obj): Animal(obj)
 {
-	this->type = obj.type;
+	this->_type = obj._type;
+
+	this->_brain = new Brain();
+	*(this->_brain) = *(obj._brain);
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
@@ -33,7 +34,10 @@ Dog& Dog::operator=(const Dog& obj)
 {
 	if (this == &obj)
 		return (*this);
-	this->type = obj.type;
+	this->_type = obj._type;
+	std::cout << "Dog copy assignment operator called" << std::endl;
+	// this->brain = new Brain(); // can be done or not cuz its default constructor is called
+	*(this->_brain) = *(obj._brain);
 	return (*this);
 }
 
@@ -44,7 +48,7 @@ void Dog::makeSound() const
 
 Dog::~Dog()
 {
-	delete this->brain;
+	delete this->_brain;
 	std::cout << "Dog destructor called" << std::endl;
 }
 
@@ -53,16 +57,16 @@ Dog::~Dog()
 
 Cat::Cat()
 {
-	this->type = "Cat";
-
-	this->brain = new Brain();
-
+	this->_type = "Cat";
+	this->_brain = new Brain();
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat& obj): Animal(obj)
 {
-	this->type = obj.type;
+	this->_type = obj._type;
+	this->_brain = new Brain();
+	*(this->_brain) = *(obj._brain);
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
@@ -70,7 +74,11 @@ Cat& Cat::operator=(const Cat& obj)
 {
 	if (this == &obj)
 		return (*this);
-	this->type = obj.type;
+
+	this->_type = obj._type;
+	std::cout << "Cat copy assignment operator called" << std::endl;
+	this->_brain = new Brain();
+	*(this->_brain) = *(obj._brain);
 	return (*this);
 }
 
@@ -82,6 +90,6 @@ void Cat::makeSound() const
 
 Cat::~Cat()
 {
-	delete this->brain;
+	delete this->_brain;
 	std::cout << "Cat destructor called" << std::endl;
 }
