@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:41:40 by maneddam          #+#    #+#             */
-/*   Updated: 2023/09/30 10:42:36 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/09/30 12:21:49 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::Dog()
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& obj): Animal(obj)
+Dog::Dog(const Dog& obj): A_animal(obj)
 {
 	this->_type = obj._type;
 
@@ -61,7 +61,7 @@ Cat::Cat()
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& obj): Animal(obj)
+Cat::Cat(const Cat& obj): A_animal(obj)
 {
 	this->_type = obj._type;
 	this->_brain = new Brain();
