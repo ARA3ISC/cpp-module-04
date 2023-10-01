@@ -2,6 +2,10 @@
 #define AMATERIA_HPP
 
 #include <iostream>
+# define RED "\033[31m"
+# define GREEN "\033[92m"
+# define RESET "\033[0m"
+# define CYAN "\033[96m"
 #include "ICharacter.hpp"
 
 class AMateria

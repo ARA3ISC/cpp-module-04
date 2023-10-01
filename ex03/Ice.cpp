@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:59:32 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/01 14:39:26 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/01 17:19:38 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ AMateria* Ice::clone() const
 	AMateria *tmp = new Ice();
 
 	return tmp;
+}
+
+void AMateria::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
 Ice::~Ice()
