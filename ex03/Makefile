@@ -2,7 +2,7 @@ NAME= interface
 CXX= c++
 RM= rm -rf
 CXXFLAGS= -Werror -Wextra -Wall -std=c++98 -fsanitize=address -g3
-SRC= main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp ICharacter.cpp
+SRC= main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp ICharacter.cpp MateriaSource.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)
