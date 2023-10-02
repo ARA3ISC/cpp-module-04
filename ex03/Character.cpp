@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:36:47 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/02 16:22:13 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 16:36:34 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Character::Character(const Character& obj): ICharacter(obj), _name(obj._name)
 	{
 		if (obj.slots[i] != NULL)
 		{
+			// delete this->slots[i];
 			this->slots[i] = obj.slots[i]->clone();
 			(*this->slots[i]) = (*obj.slots[i]);
 		}
@@ -54,6 +55,7 @@ Character& Character::operator=(const Character& obj)
 	{
 		if (obj.slots[i] != NULL)
 		{
+			// delete this->slots[i];
 			this->slots[i] = obj.slots[i]->clone();
 			(*this->slots[i]) = (*obj.slots[i]);
 		}
@@ -65,6 +67,12 @@ Character& Character::operator=(const Character& obj)
 
 Character::~Character()
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->slots[i])
+			delete this->slots[i];
+	}
+
 	std::cout << "Character destructor called" << std::endl;
 }
 
@@ -99,6 +107,7 @@ void Character::unequip(int idx)
 	}
 	std::cout << GREEN << this->slots[idx]->getType() <<   " unequiped successfuly" << RESET << std::endl;
 	delete this->slots[idx];
+	this->slots[idx] = NULL;
 
 }
 
