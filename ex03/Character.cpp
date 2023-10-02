@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:36:47 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/02 12:40:35 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:56:50 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 #include <iostream>
 /* Canonical form*/
 
-
 Character::Character() : _name("unknown")
 {
 	for (int i = 0; i < 4; i++)
 		this->slots[i] = NULL;
 	std::cout << "Character default constructor called" << std::endl;
+
 }
 
 Character::Character(std::string const& name): _name(name)
 {
 	for (int i = 0; i < 4; i++)
 		this->slots[i] = NULL;
+	std::cout << "Character constructor called" << std::endl;
 }
 
 Character::Character(const Character& obj): ICharacter(obj)
@@ -58,8 +59,8 @@ void Character::equip(AMateria* m)
 	{
 		if (this->slots[i] == NULL)
 		{
-			this->slots[i] = m;
-			std::cout << GREEN << "Materia equiped successfuly" << RESET << std::endl;
+			this->slots[i] = m->clone();
+			std::cout<< GREEN << this->slots[i]->getType() << " equiped successfuly" << RESET << std::endl;
 			return;
 		}
 	}
@@ -68,17 +69,15 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	for (int i = 0; i < 4; i++)
+	if (idx < 0 || idx >= 4 || this->slots[idx] == NULL)
 	{
-		if (i == idx)
-		{
-			delete this->slots[i];
-			this->slots[i] = NULL;
-			std::cout << GREEN << "Materia unequiped successfuly" << RESET << std::endl;
-			return;
-		}
+		std::cout << RED << "Materia not found" << RESET << std::endl;
+		// ! still leak when unequiping unexisting materia
+		return;
 	}
-	std::cout << RED << "Materia not found" << RESET << std::endl;
+	std::cout << GREEN << this->slots[idx]->getType() <<   " unequiped successfuly" << RESET << std::endl;
+	delete this->slots[idx];
+
 }
 
 void Character::use(int idx, ICharacter& target)
