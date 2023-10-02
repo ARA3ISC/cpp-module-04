@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:25:23 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/02 15:35:23 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 15:42:17 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 	player.equip(kabus);
 
 
-	// player.equip(medkit); // full inventory if its the 5th materia
+	// player.equip(medkit); // full inventory if its the 5th materia 
 
 	// player.use(0, player);
 	player.use(4, player);
