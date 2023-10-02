@@ -6,11 +6,12 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:59:32 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/01 17:19:38 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:20:48 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 
 Ice::Ice(): AMateria("ice")
 {

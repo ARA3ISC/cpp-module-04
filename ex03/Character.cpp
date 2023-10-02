@@ -6,26 +6,27 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:36:47 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/01 17:33:08 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:20:11 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-
+#include "ICharacter.hpp"
+#include <iostream>
 /* Canonical form*/
 
 
 Character::Character() : _name("unknown")
 {
 	for (int i = 0; i < 4; i++)
-		this->slots[i] = nullptr;
+		this->slots[i] = NULL;
 	std::cout << "Character default constructor called" << std::endl;
 }
 
 Character::Character(std::string const& name): _name(name)
 {
 	for (int i = 0; i < 4; i++)
-		this->slots[i] = nullptr;
+		this->slots[i] = NULL;
 }
 
 Character::Character(const Character& obj): ICharacter(obj)
@@ -50,9 +51,9 @@ void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->slots[i] == nullptr)
+		if (this->slots[i] == NULL)
 		{
-			this->slots[i] == m->clone();
+			this->slots[i] = m;
 			std::cout << GREEN << "Materia equiped successfuly" << RESET << std::endl;
 			return;
 		}
@@ -64,10 +65,10 @@ void Character::unequip(int idx)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (i == 4)
+		if (i == idx)
 		{
 			delete this->slots[i];
-			this->slots[i] == nullptr;
+			this->slots[i] = NULL;
 			std::cout << GREEN << "Materia unequiped successfuly" << RESET << std::endl;
 			return;
 		}
@@ -77,5 +78,6 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	this->slots[idx] == this->slots[idx].clone();
+	if (idx >= 0 && idx < 4)
+		this->slots[idx]->use(target);
 }

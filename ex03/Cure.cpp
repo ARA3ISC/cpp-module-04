@@ -6,11 +6,12 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:38 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/01 17:20:32 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:21:00 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
 Cure::Cure(): AMateria("cure")
 {

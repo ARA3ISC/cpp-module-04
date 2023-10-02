@@ -6,18 +6,13 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:25:23 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/01 14:30:30 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 10:47:56 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Character.hpp"
 
 int main()
 {
-	// AMateria *a = new Ice();
-
-	// AMateria *b = a;
-
-	// // b = a;
-	// std::cout << a->getType() << std::endl << std::endl;
+	// Character player("Kratos");
 }
