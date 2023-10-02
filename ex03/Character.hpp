@@ -2,7 +2,6 @@
 # define CHARACTER_HPP
 
 #include "ICharacter.hpp"
-class AMateria;
 #include <iostream>
 
 class Character : public ICharacter

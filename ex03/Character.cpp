@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:36:47 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/02 11:20:11 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:40:35 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ Character& Character::operator=(const Character& obj)
 Character::~Character()
 {
 	std::cout << "Character destructor called" << std::endl;
+}
+
+std::string const& Character::getName() const
+{
+	return this->_name;
 }
 
 /* override base class ICharacter virtual functions*/

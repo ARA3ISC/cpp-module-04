@@ -1,13 +1,12 @@
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-#include "iostream"
+# include <iostream>
 # define RED "\033[31m"
 # define GREEN "\033[92m"
 # define RESET "\033[0m"
 # define CYAN "\033[96m"
 
-// #include "ICharacter.hpp"
 class ICharacter;
 
 class AMateria
@@ -25,7 +24,6 @@ class AMateria
 		virtual ~AMateria();
 
 		virtual void use(ICharacter& target);
-
 };
 
 #endif

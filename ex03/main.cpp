@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:25:23 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/02 10:47:56 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:43:26 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int main()
 {
-	// Character player("Kratos");
+	Character player("Kratos");
 }

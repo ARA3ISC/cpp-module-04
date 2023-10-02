@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:38 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/02 11:21:00 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:36:25 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ AMateria* Cure::clone() const
 	return tmp;
 }
 
-void AMateria::use(ICharacter& target)
+void Cure::use(ICharacter& target)
 {
 	std::cout << GREEN << "* heals " << target.getName() << "'s wounds *" << RESET << std::endl;
 }

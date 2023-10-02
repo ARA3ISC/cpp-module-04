@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 16:15:05 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/01 11:53:12 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:41:35 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,8 @@ std::string const & AMateria::getType() const
 AMateria::~AMateria()
 {
 	std::cout << "AMateria Destructor called" << std::endl;
+}
+void AMateria::use(ICharacter& target)
+{
+	(void)target;
 }
