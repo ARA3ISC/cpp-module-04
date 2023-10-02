@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:36:47 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/02 14:56:50 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 15:36:17 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx < 4)
+	if (idx >= 0 && idx < 4 && this->slots[idx])
 		this->slots[idx]->use(target);
+	std::cout << RED << "Materia not found" << RESET << std::endl;
 }
