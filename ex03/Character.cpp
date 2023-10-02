@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:36:47 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/02 15:36:17 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/02 16:22:13 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 #include <iostream>
 /* Canonical form*/
 
-Character::Character() : _name("unknown")
-{
-	for (int i = 0; i < 4; i++)
-		this->slots[i] = NULL;
-	std::cout << "Character default constructor called" << std::endl;
+// Character::Character() : _name("unknown")
+// {
+// 	for (int i = 0; i < 4; i++)
+// 		this->slots[i] = NULL;
+// 	std::cout << "Character default constructor called" << std::endl;
 
-}
+// }
 
 Character::Character(std::string const& name): _name(name)
 {
@@ -30,14 +30,36 @@ Character::Character(std::string const& name): _name(name)
 	std::cout << "Character constructor called" << std::endl;
 }
 
-Character::Character(const Character& obj): ICharacter(obj)
+Character::Character(const Character& obj): ICharacter(obj), _name(obj._name)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (obj.slots[i] != NULL)
+		{
+			this->slots[i] = obj.slots[i]->clone();
+			(*this->slots[i]) = (*obj.slots[i]);
+		}
+		else
+			this->slots[i] = NULL;
+	}
+
 	std::cout << "Character copy constructor called" << std::endl;
 }
 
 Character& Character::operator=(const Character& obj)
 {
-	(void)obj;
+	if (this == &obj)
+		return *this;
+	for (int i = 0; i < 4; i++)
+	{
+		if (obj.slots[i] != NULL)
+		{
+			this->slots[i] = obj.slots[i]->clone();
+			(*this->slots[i]) = (*obj.slots[i]);
+		}
+		else
+			this->slots[i] = NULL;
+	}
 	return *this;
 }
 

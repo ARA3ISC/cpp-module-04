@@ -7,11 +7,11 @@
 class Character : public ICharacter
 {
 	private:
-		std::string const _name;
-		AMateria *slots[4];
 	public:
+		AMateria *slots[4];
+		std::string const _name;
 		/* Canonical form*/
-		Character();
+		// Character();
 		Character(std::string const& name);
 		Character(const Character& obj);
 		Character& operator=(const Character& obj);
