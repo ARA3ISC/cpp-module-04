@@ -9,6 +9,7 @@ class Character : public ICharacter
 	private:
 		std::string const _name;
 		AMateria *slots[4];
+		AMateria *toDelete[4];
 	public:
 		/* Canonical form*/
 		Character(std::string const& name);

@@ -6,27 +6,21 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:36:47 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/02 16:36:34 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/03 16:14:24 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "ICharacter.hpp"
 #include <iostream>
+
 /* Canonical form*/
-
-// Character::Character() : _name("unknown")
-// {
-// 	for (int i = 0; i < 4; i++)
-// 		this->slots[i] = NULL;
-// 	std::cout << "Character default constructor called" << std::endl;
-
-// }
-
 Character::Character(std::string const& name): _name(name)
 {
 	for (int i = 0; i < 4; i++)
 		this->slots[i] = NULL;
+	for (int i = 0; i < 4; i++)
+		this->toDelete[i] = NULL;
 	std::cout << "Character constructor called" << std::endl;
 }
 
@@ -36,7 +30,6 @@ Character::Character(const Character& obj): ICharacter(obj), _name(obj._name)
 	{
 		if (obj.slots[i] != NULL)
 		{
-			// delete this->slots[i];
 			this->slots[i] = obj.slots[i]->clone();
 			(*this->slots[i]) = (*obj.slots[i]);
 		}
@@ -55,7 +48,6 @@ Character& Character::operator=(const Character& obj)
 	{
 		if (obj.slots[i] != NULL)
 		{
-			// delete this->slots[i];
 			this->slots[i] = obj.slots[i]->clone();
 			(*this->slots[i]) = (*obj.slots[i]);
 		}
@@ -69,10 +61,14 @@ Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->slots[i])
+		if (this->slots[i] != NULL)
 			delete this->slots[i];
 	}
-
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->toDelete[i] != NULL)
+			delete this->toDelete[i];
+	}
 	std::cout << "Character destructor called" << std::endl;
 }
 
@@ -89,7 +85,7 @@ void Character::equip(AMateria* m)
 	{
 		if (this->slots[i] == NULL)
 		{
-			this->slots[i] = m->clone();
+			this->slots[i] = m;
 			std::cout<< GREEN << this->slots[i]->getType() << " equiped successfuly" << RESET << std::endl;
 			return;
 		}
@@ -102,18 +98,17 @@ void Character::unequip(int idx)
 	if (idx < 0 || idx >= 4 || this->slots[idx] == NULL)
 	{
 		std::cout << RED << "Materia not found" << RESET << std::endl;
-		// ! still leak when unequiping unexisting materia
 		return;
 	}
 	std::cout << GREEN << this->slots[idx]->getType() <<   " unequiped successfuly" << RESET << std::endl;
-	delete this->slots[idx];
+	this->toDelete[idx] = this->slots[idx];
 	this->slots[idx] = NULL;
-
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx < 4 && this->slots[idx])
+	if (idx >= 0 && idx < 4 && this->slots[idx] != NULL)
 		this->slots[idx]->use(target);
-	std::cout << RED << "Materia not found" << RESET << std::endl;
+	else
+		std::cout << RED << "Materia not found" << RESET << std::endl;
 }

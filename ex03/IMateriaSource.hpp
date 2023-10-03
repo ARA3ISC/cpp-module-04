@@ -2,7 +2,8 @@
 # define IMATERIASOURCE_HPP
 
 #include <iostream>
-class AMateria;
+// class AMateria;
+#include "AMateria.hpp"
 
 class IMateriaSource
 {

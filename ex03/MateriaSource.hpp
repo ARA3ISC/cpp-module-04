@@ -3,8 +3,11 @@
 
 #include "IMateriaSource.hpp"
 
-class MateriaSource : IMateriaSource
+class MateriaSource : public IMateriaSource
 {
+	private:
+		AMateria *materia[4];
+		// int counter
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource& obj);
@@ -12,7 +15,7 @@ class MateriaSource : IMateriaSource
 		virtual ~MateriaSource();
 
 
-		void learnMateria(AMateria*);
+		void learnMateria(AMateria* m);
 		AMateria* createMateria(std::string const & type);
 
 
