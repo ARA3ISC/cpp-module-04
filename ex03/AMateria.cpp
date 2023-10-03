@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 16:15:05 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/03 14:52:49 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/03 17:20:08 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ AMateria::~AMateria()
 void AMateria::use(ICharacter& target)
 {
 	(void)target;
+	std::cout << "Materia not defined" << std::endl;
 }
