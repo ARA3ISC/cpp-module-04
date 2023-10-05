@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:36:47 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/03 16:14:24 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/05 15:28:42 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void Character::equip(AMateria* m)
 			return;
 		}
 	}
-	std::cout << RED << "There is no space in inventory" << RESET << std::endl;
+	std::cout << RED << "Full inventory" << RESET << std::endl;
 }
 
 void Character::unequip(int idx)
