@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:38 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/03 14:48:27 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/04 20:04:12 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Cure &Cure::operator=(const Cure &obj)
 AMateria* Cure::clone() const
 {
 	AMateria *tmp = new Cure();
-
 	return tmp;
 }
 

@@ -7,7 +7,6 @@ class MateriaSource : public IMateriaSource
 {
 	private:
 		AMateria *materia[4];
-		// int counter
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource& obj);

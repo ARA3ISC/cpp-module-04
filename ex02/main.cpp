@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:15:54 by maneddam          #+#    #+#             */
-/*   Updated: 2023/09/30 12:21:46 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/04 20:01:51 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main()
 {
-	A_animal *dog = new Dog();
+	A_animal *dog = new Cat();
 
 	dog->makeSound();
 
