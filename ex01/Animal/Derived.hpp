@@ -7,8 +7,8 @@
 class Dog: public Animal
 {
 	private:
-		Brain* _brain;
 	public:
+		Brain* _brain;
 		Dog();
 		Dog(const Dog& obj);
 		Dog& operator=(const Dog& obj);
@@ -19,8 +19,8 @@ class Dog: public Animal
 class Cat: public Animal
 {
 	private:
-		Brain* _brain;
 	public:
+		Brain* _brain;
 		Cat();
 		Cat(const Cat& obj);
 		Cat& operator=(const Cat& obj);

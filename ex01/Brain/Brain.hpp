@@ -7,9 +7,9 @@
 class Brain
 {
 	private:
-		std::string _ideas[IDEAS_COUNT];
 
 	public:
+		std::string _ideas[IDEAS_COUNT];
 		Brain();
 		Brain(const Brain& obj);
 		Brain& operator=(const Brain& obj);

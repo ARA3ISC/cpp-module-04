@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:15:54 by maneddam          #+#    #+#             */
-/*   Updated: 2023/09/30 10:42:58 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:08:56 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,5 @@ int main()
 	}
 }
 
-// testst for deep and shallow copy
 
-// int main()
-// {
-// 	Dog dog;
-
-// 	std::cout << std::endl;
-// 	std::cout << "*** " << dog.brain->ideas[0] << std::endl;
-// 	std::cout << std::endl;
-
-
-// 	Dog dwiyeg;
-
-// 	dwiyeg = dog;
-// 	dwiyeg.brain->ideas[0] = "another one";
-
-// 	std::cout << std::endl;
-// 	std::cout << " --> " << dog.brain->ideas[0] << std::endl;
-// 	std::cout << std::endl;
-
-// 	std::cout << std::endl;
-// }
 
